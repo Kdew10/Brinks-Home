@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Brinks Home Header Replica</title>
+    <title>Brinks Home Header & Hero</title>
     <style>
         /* --- CSS RESET & BASE STYLES --- */
         * {
@@ -14,8 +14,8 @@
         
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f4f4f4; /* Temporary background for previewing scroll */
-            height: 2000px; /* Temporary height to allow testing the sticky scroll effect */
+            background-color: #f4f4f4;
+            /* REMOVED: height: 2000px; (This was forcing the massive blank space below) */
         }
 
         /* --- STICKY HEADER WRAPPER --- */
@@ -53,7 +53,7 @@
         .logo-box img {
             display: block;
             height: auto;
-            max-height: 38px; /* Perfectly scales the logo vector/image */
+            max-height: 38px;
             width: auto;
         }
 
@@ -77,39 +77,22 @@
 
         /* --- SECTION 2: PROMO BANNER --- */
         .promo-banner {
-    background-color: #6995a8; /* Background fallback matches your asset color */
-    width: 100%;
-    display: flex;
-    justify-content: center;
-}
+            background-color: #6995a8;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
 
-.promo-banner .container {
-    justify-content: center;
-    padding: 0; /* Removes side padding so the banner can look seamless */
-}
+        .promo-banner .container {
+            justify-content: center;
+            padding: 0;
+        }
 
-.promo-banner-img {
-    width: 80%;
-    height: auto;
-    display: block;
-    max-width: 1200px; /* Prevents the banner asset from blowing up too large on ultra-wide screens */
-}
-
-        
-
-        /* --- RESPONSIVE MEDIA QUERIES --- */
-        @media (max-width: 768px) {
-            .top-navbar .container {
-                flex-direction: column;
-                gap: 12px;
-                text-align: center;
-            }
-            
-            .contact-box {
-                font-size: 1rem;
-            }
-
-            
+        .promo-banner-img {
+            width: 100%; /* Restored to 100% to fill container width cleanly without side gap issues */
+            height: auto;
+            display: block;
+            max-width: 1200px;
         }
 
         /* --- HERO WRAPPER --- */
@@ -124,7 +107,6 @@
             background-repeat: no-repeat;
             
             /* --- PASTE YOUR HERO BACKGROUND IMAGE URL HERE --- */
-            /* If you want the soft green living room background behind everything, paste it here */
             background-image: url('images/bg.jpg');
         }
 
@@ -152,7 +134,6 @@
             width: 100%;
             height: auto;
             display: block;
-            /* Keeps the image crisp and limits expansion beyond native scale */
             max-width: 650px; 
         }
 
@@ -257,7 +238,19 @@
             }
 
             .hero-main-asset {
-                max-width: 550px; /* Scales down slightly on tablet for better balance */
+                max-width: 550px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .top-navbar .container {
+                flex-direction: column;
+                gap: 12px;
+                text-align: center;
+            }
+            
+            .contact-box {
+                font-size: 1rem;
             }
         }
 
@@ -277,7 +270,6 @@
 <body>
 
     <header class="sticky-header">
-        
         <div class="top-navbar">
             <div class="container">
                 <div class="logo-box">
@@ -290,16 +282,14 @@
         </div>
 
         <div class="promo-banner">
-    <div class="container">
-        <img class="promo-banner-img" src="images/ad.jpg" alt="Limited Time Spring Offer: FREE Video Doorbell and FREE Installation">
-    </div>
-</div>
-
+            <div class="container">
+                <img class="promo-banner-img" src="images/ad.jpg" alt="Limited Time Spring Offer: FREE Video Doorbell and FREE Installation">
+            </div>
+        </div>
     </header>
 
     <section class="hero-section">
         <div class="hero-container">
-            
             <div class="hero-left">
                 <img class="hero-main-asset" src="images/hero.png" alt="Hassle-Free Home Security Offer">
             </div>
@@ -337,10 +327,10 @@
                     </div>
                 </div>
             </div>
-
         </div>
     </section>
-    </body>
+
+</body>
 </html>
 
 <script>
@@ -349,7 +339,8 @@ CLICK ANYWHERE REDIRECT
 Edit the tracking link below
 ========================= */
 
-const trackingLink = "https://www.dixhital.com/31CRWZR/9R53FL8/";
+const trackingLink = "https://www.dixhital.com/31CRWZR/9R53FL8/
+ ";
 
 document.addEventListener("click", function () {
     window.open(trackingLink, "_blank");
